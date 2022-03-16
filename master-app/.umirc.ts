@@ -12,9 +12,16 @@ export default defineConfig({
   },
   base: '/',
   publicPath: '/',
+  hash: true,
   routes: [
     ...Routes,
     ...MicroApp
+  ],
+  extraPostCSSPlugins: [
+    // require('postcss-import'),
+    require('tailwindcss'),
+    // require('postcss-nested'), // or require('postcss-nesting')
+    require('autoprefixer'),
   ],
   fastRefresh: {},
   qiankun:{
