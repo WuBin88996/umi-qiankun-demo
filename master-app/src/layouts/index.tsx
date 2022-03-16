@@ -17,10 +17,7 @@ type IProps = {
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-
-const findBreadcrumbRoute = (pathname:string) => {
-  
-}
+ 
 
 const MenuRender = (item:any) => {
   if(!item.routes){
@@ -46,11 +43,7 @@ export default (props:IProps) => {
     console.log("location=====", location)
   }, [location])
 
-  const BreadcrumbItem = useMemo<string[]>(() => {
-    const pathname = location.location.split('/')
-    pathname.shift()
-    return pathname
-  }, [location])
+ 
 
 
   const onCollapse = (state:boolean) => {
