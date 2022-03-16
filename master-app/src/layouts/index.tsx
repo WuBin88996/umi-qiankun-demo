@@ -14,10 +14,8 @@ type IProps = {
   children: ReactChildren
 }
 
-
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-
 
 const MenuRender = (item:any) => {
   if(!item.routes){
