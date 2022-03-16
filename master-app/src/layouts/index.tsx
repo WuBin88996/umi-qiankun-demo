@@ -17,13 +17,18 @@ type IProps = {
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
+
+const findBreadcrumbRoute = (pathname:string) => {
+  
+}
+
 const MenuRender = (item:any) => {
   if(!item.routes){
     return <Menu.Item key={item.path} >
       <Link to={item.path || '/'}>{item.name}</Link>
     </Menu.Item>
   }
-  return <SubMenu key={item.path}>
+  return <SubMenu key={item.path} title={item.name}>
     {
        item.routes.map((subItem:any) => <Menu.Item key={subItem.path}>
           <Link to={subItem.path || '/'}>{subItem.name}</Link>
@@ -39,6 +44,12 @@ export default (props:IProps) => {
 
   useEffect(() => {
     console.log("location=====", location)
+  }, [location])
+
+  const BreadcrumbItem = useMemo<string[]>(() => {
+    const pathname = location.location.split('/')
+    pathname.shift()
+    return pathname
   }, [location])
 
 
