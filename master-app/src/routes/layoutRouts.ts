@@ -1,3 +1,6 @@
+import { MicroConfig } from '../config'
+
+
 export default [
   {
     path: '/home',
@@ -29,5 +32,6 @@ export default [
         component: '@/pages/page2/children3'
       },
     ]
-  }
+  },
+  ...MicroConfig
 ]

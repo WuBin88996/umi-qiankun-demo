@@ -8,7 +8,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import layoutRouts from '@/routes/layoutRouts'
-import { useModel, Link, useLocation, history } from 'umi'
+import { useModel, Link, useLocation, history, MicroApp } from 'umi'
 
 type IProps = {
   children: ReactChildren
@@ -44,11 +44,10 @@ export default (props:IProps) => {
   }, [location])
 
  
-
-
   const onCollapse = (state:boolean) => {
     setCollapsed(state)
   }
+ 
 
   return <Layout style={{ minHeight: '100vh' }}>
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
@@ -68,7 +67,7 @@ export default (props:IProps) => {
           <Breadcrumb.Item>Bill</Breadcrumb.Item>
         </Breadcrumb>
         <div className="w-full h-full overflow-auto">
-          {props.children}
+          { props.children }
         </div>
       </Content>
       {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}

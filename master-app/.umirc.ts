@@ -1,5 +1,4 @@
 import { defineConfig } from 'umi';
-import {MicroApp} from './src/config'
 import Routes from './src/routes'
 
 export default defineConfig({
@@ -15,7 +14,6 @@ export default defineConfig({
   hash: true,
   routes: [
     ...Routes,
-    ...MicroApp
   ],
   extraPostCSSPlugins: [
     // require('postcss-import'),
