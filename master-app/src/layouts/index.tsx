@@ -37,7 +37,7 @@ const MenuRender = (item:any) => {
 export default (props:IProps) => {
   const [collapsed, setCollapsed] = useState(false)
 
-  const location: any = useLocation()
+  const location = useLocation()
 
   useEffect(() => {
     console.log("location=====", location)
@@ -52,7 +52,7 @@ export default (props:IProps) => {
   return <Layout style={{ minHeight: '100vh' }}>
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
       <div className="h-50 w-150 bg-fff mx-auto my-30">LOGO</div>
-      <Menu theme="dark" defaultSelectedKeys={[layoutRouts[0].path]} mode="inline">
+      <Menu theme="dark" defaultSelectedKeys={[location.pathname]} mode="inline">
  {/* <Menu.Item key="1" icon={<PieChartOutlined />}>
           Option 1
         </Menu.Item> */}
